@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Artwork</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pricelist.html">Price List</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <img src="logo.jpg" alt="My Logo" class="logo">
+    </header>
+    <main>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="scrollCarousel(-1)" aria-label="Previous image">❮</button>
+                <div class="carousel-container">
+                    <div id="gallery-images" class="carousel-track"></div>
+                </div>
+                <button class="carousel-btn next" onclick="scrollCarousel(1)" aria-label="Next image">❯</button>
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome!</p>
+            <p>I'm Kay and I was born to be an artist.</p>
+            <p>I can’t actually remember a time that I wasn’t drawing or painting. It drove my Mum mad as I’d make such a mess of the carpet in my room (cleverly disguised by the careful placing of a rug)!</p>
+            <p>The Royal College of London accepted me at just 16 years old to join them, but unfortunately, I had to get a job to help with family finances and my dreams of becoming an illustrator had to be put on hold. A hold that lasted for many years.</p>
+            <p>When covid struck it made me rethink my life as it did for many people, and I took that opportunity to leave my job and start my life as an artist. I haven’t looked back since.</p>
+            <p>Now every morning I wake up excited to get into the studio and create!</p>
+            <p>My style has a modern feel to it, bright and colourful; yet it still captures the look and character of the subject whether that be your beloved pet or a wedding portrait or a landscape.</p>
+            <p>As well as my commission work, I create my own illustrations which are turned into cards and home decor; these can be bought from my <a href="https://www.etsy.com/your-shop" target="_blank" rel="noopener">Etsy shop</a>.</p>
+            <p>I hope that you find joy in my work and if you are interested in commissioning a portrait or purchasing one of my original pieces then please drop me a line in the <a href="contact.html">contact section</a>.</p>
+            <p>Much Love</p>
+            <p>Kay x</p>
+        </section>
+    </main>
+    <script src="script.js?v=1"></script>
+</body>
+</html>

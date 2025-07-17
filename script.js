@@ -2,10 +2,8 @@ let currentIndex = 0;
 const maxImages = 100;
 const extensions = ['jpg', 'jpeg', 'png', 'gif'];
 
-// Set imageWidth based on screen size
 const imageWidth = window.innerWidth <= 600 ? 220 : 320;
 
-// Generate possible image filenames
 const possibleImages = [];
 for (let i = 1; i <= maxImages; i++) {
     extensions.forEach(ext => {
@@ -16,7 +14,6 @@ for (let i = 1; i <= maxImages; i++) {
 const gallery = document.getElementById('gallery-images');
 let loadedImages = 0;
 
-// Load images that exist
 possibleImages.forEach(filename => {
     if (loadedImages >= maxImages) return;
 
@@ -24,7 +21,6 @@ possibleImages.forEach(filename => {
     imgElement.src = `ARTWORK/${filename}?v=${Date.now()}`;
     imgElement.alt = `Artwork ${filename}`;
 
-    // Add click event to open modal
     imgElement.onclick = () => openModal(imgElement.src, imgElement.alt);
 
     imgElement.onload = () => {
@@ -65,3 +61,26 @@ function closeModal() {
     const modal = document.getElementById('image-modal');
     modal.classList.remove('active');
 }
+
+// Fade-in effect for scroll-triggered animations
+document.addEventListener('DOMContentLoaded', () => {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add slight delay for staggered effect (e.g., for testimonials)
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100); // 100ms delay per element
+                observer.unobserve(entry.target); // Stop observing once animated
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of element is visible
+    });
+
+    fadeInElements.forEach(element => {
+        observer.observe(element);
+    });
+});

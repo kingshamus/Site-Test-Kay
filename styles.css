@@ -12,19 +12,22 @@ body {
     margin: auto;
 }
 
-header {
-    text-align: center;
+.blue-banner {
+    background-color: #007bff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     margin-bottom: 40px;
 }
 
 .navbar {
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
@@ -34,23 +37,25 @@ header {
 
 .navbar a {
     text-decoration: none;
-    color: #333;
+    color: #fff; /* White text for contrast on blue */
     font-size: 1.1em;
     padding: 10px 15px;
     transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #007bff;
+    color: #ccc;
 }
 
 .navbar a.active {
     font-weight: bold;
-    color: #007bff;
+    color: #fff;
+    background-color: #0056b3; /* Slightly darker blue for active */
+    border-radius: 4px;
 }
 
 .logo {
-    max-width: 200px;
+    max-width: 150px; /* Smaller logo to fit banner */
     height: auto;
 }
 
@@ -89,7 +94,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     display: none;
-    cursor: pointer; /* Indicate images are clickable */
+    cursor: pointer;
 }
 
 .carousel-track img.loaded {
@@ -133,6 +138,35 @@ header {
 #about p, #pricelist p, #contact p {
     max-width: 600px;
     margin: 0 auto 20px;
+}
+
+.about-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.youtube-embed {
+    flex: 1;
+    background-color: #f4f4f4; /* Placeholder background */
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.youtube-embed iframe {
+    width: 100%;
+    height: 315px; /* Standard YouTube embed height */
+    border: none;
 }
 
 .price-table {
@@ -296,8 +330,26 @@ header {
 }
 
 @media (max-width: 600px) {
+    .blue-banner {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
     .logo {
-        max-width: 150px;
+        max-width: 120px;
+        margin-bottom: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar a {
+        padding: 10px;
+        font-size: 1em;
+        line-height: 1.5;
     }
 
     .carousel-track img {
@@ -310,15 +362,17 @@ header {
         font-size: 18px;
     }
 
-    .navbar ul {
+    .about-container {
         flex-direction: column;
-        gap: 12px;
+        gap: 20px;
     }
 
-    .navbar a {
-        padding: 10px;
-        font-size: 1em;
-        line-height: 1.5;
+    .about-text {
+        text-align: center;
+    }
+
+    .youtube-embed iframe {
+        height: 200px; /* Smaller video on mobile */
     }
 
     .price-table {

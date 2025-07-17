@@ -10,15 +10,20 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    padding-top: 80px; /* Add padding to prevent content overlap with fixed banner */
 }
 
 .blue-banner {
-    background-color: #007bff;
+    background-color: #001f3f; /* Navy blue */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    margin-bottom: 40px;
+    width: 100%;
+    position: fixed; /* Stick to top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure banner is above other content */
 }
 
 .navbar {
@@ -50,7 +55,7 @@ body {
 .navbar a.active {
     font-weight: bold;
     color: #fff;
-    background-color: #0056b3;
+    background-color: #003087; /* Slightly lighter navy for active */
     border-radius: 4px;
 }
 
@@ -341,10 +346,14 @@ body {
 }
 
 @media (max-width: 600px) {
+    body {
+        padding-top: 120px; /* More padding for stacked banner on mobile */
+    }
+
     .blue-banner {
         flex-direction: column;
         align-items: center;
-        padding: 15px;
+        padding: 10px;
     }
 
     .logo {

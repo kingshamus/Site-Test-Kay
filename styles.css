@@ -10,20 +10,20 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
-    padding-top: 80px; /* Add padding to prevent content overlap with fixed banner */
+    padding-top: 120px;
 }
 
 .blue-banner {
-    background-color: #001f3f; /* Navy blue */
+    background-color: #001f3f;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     width: 100%;
-    position: fixed; /* Stick to top */
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Ensure banner is above other content */
+    z-index: 1000;
 }
 
 .navbar {
@@ -55,20 +55,20 @@ body {
 .navbar a.active {
     font-weight: bold;
     color: #fff;
-    background-color: #003087; /* Slightly lighter navy for active */
+    background-color: #003087;
     border-radius: 4px;
 }
 
 .logo {
-    max-width: 150px;
+    max-width: 200px;
     height: auto;
 }
 
-#gallery, #pricelist, #contact, #testimonials {
+#gallery, #pricelist, #contact, #testimonials, #about, #blog {
     margin-bottom: 40px;
 }
 
-#gallery h2, #pricelist h2, #contact h2, #testimonials h2 {
+#gallery h2, #pricelist h2, #contact h2, #testimonials h2, #about h2, #blog h2 {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -132,15 +132,15 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-#about, #pricelist, #contact, #testimonials {
+#about, #pricelist, #contact, #testimonials, #blog {
     text-align: center;
 }
 
-#about h2, #pricelist h2, #contact h2, #testimonials h2 {
+#about h2, #pricelist h2, #contact h2, #testimonials h2, #blog h2 {
     margin-bottom: 20px;
 }
 
-#about p, #pricelist p, #contact p {
+#about p, #pricelist p, #contact p, #blog p {
     max-width: 600px;
     margin: 0 auto 20px;
 }
@@ -156,6 +156,16 @@ body {
 .about-text {
     flex: 1;
     text-align: left;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #ddd;
 }
 
 .youtube-embed {
@@ -294,6 +304,29 @@ body {
     color: #333;
 }
 
+#blog-content {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100px;
+}
+
+#blog-content p {
+    text-align: left;
+    visibility: visible;
+}
+
+.blog-post {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-post h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #001f3f; /* Match navy blue theme */
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -345,9 +378,33 @@ body {
     transform: translateY(0);
 }
 
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #001f3f;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
 @media (max-width: 600px) {
     body {
-        padding-top: 120px; /* More padding for stacked banner on mobile */
+        padding-top: 160px;
     }
 
     .blue-banner {
@@ -357,7 +414,7 @@ body {
     }
 
     .logo {
-        max-width: 120px;
+        max-width: 150px;
         margin-bottom: 10px;
     }
 
@@ -389,6 +446,11 @@ body {
 
     .about-text {
         text-align: center;
+    }
+
+    .about-image {
+        max-width: 100%;
+        height: auto;
     }
 
     .youtube-embed iframe {
@@ -458,5 +520,18 @@ body {
         right: 10px;
         font-size: 20px;
         padding: 8px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #blog-content p {
+        text-align: center;
+    }
+
+    .blog-post h3 {
+        font-size: 1.2em;
     }
 }
